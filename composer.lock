@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76578c75ee0c791e1ae712b463faa82c",
+    "content-hash": "908ede79eebad1ed65c693bc30fd4c9f",
     "packages": [
         {
             "name": "amphp/amp",
-            "version": "v1.2.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/amp.git",
-                "reference": "4f2161da5f68f274f116985635aea63b5c0f54d2"
+                "reference": "23ac95fc6d6973231763f5ed7d1309b39429b974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/amp/zipball/4f2161da5f68f274f116985635aea63b5c0f54d2",
-                "reference": "4f2161da5f68f274f116985635aea63b5c0f54d2",
+                "url": "https://api.github.com/repos/amphp/amp/zipball/23ac95fc6d6973231763f5ed7d1309b39429b974",
+                "reference": "23ac95fc6d6973231763f5ed7d1309b39429b974",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -27,24 +27,30 @@
                 ]
             },
             "require": {
-                "php": ">=5.5"
+                "php": ">=7"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "~1.9",
-                "phpunit/phpunit": "~4.8"
+                "amphp/php-cs-fixer-config": "dev-master",
+                "amphp/phpunit-util": "^1",
+                "ext-json": "*",
+                "jetbrains/phpstorm-stubs": "^2019.3",
+                "phpunit/phpunit": "^6.0.9 | ^7",
+                "react/promise": "^2",
+                "vimeo/psalm": "^3.11@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Amp\\": "lib/"
+                    "Amp\\": "lib"
                 },
                 "files": [
-                    "lib/functions.php"
+                    "lib/functions.php",
+                    "lib/Internal/functions.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -54,20 +60,35 @@
             "authors": [
                 {
                     "name": "Daniel Lowrey",
-                    "email": "rdlowrey@php.net",
-                    "role": "Creator / Lead Developer"
+                    "email": "rdlowrey@php.net"
+                },
+                {
+                    "name": "Aaron Piotrowski",
+                    "email": "aaron@trowski.com"
+                },
+                {
+                    "name": "Bob Weinand",
+                    "email": "bobwei9@hotmail.com"
+                },
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
                 }
             ],
-            "description": "A non-blocking concurrency framework for PHP applications",
-            "homepage": "https://github.com/amphp/amp",
+            "description": "A non-blocking concurrency framework for PHP applications.",
+            "homepage": "http://amphp.org/amp",
             "keywords": [
                 "async",
+                "asynchronous",
+                "awaitable",
                 "concurrency",
                 "event",
+                "event-loop",
+                "future",
                 "non-blocking",
                 "promise"
             ],
-            "time": "2016-05-12T12:54:59+00:00"
+            "time": "2020-04-19T15:54:21+00:00"
         },
         {
             "name": "kozlice/monolog-kafka",
@@ -210,16 +231,16 @@
         },
         {
             "name": "nmred/kafka-php",
-            "version": "v0.2.0.8",
+            "version": "dev-v0.3.0-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weiboad/kafka-php.git",
-                "reference": "d5b395aeb9d069dce49fc1dceff0a6f45750d981"
+                "reference": "b12cfc683e2a9f8d20c008a942e2ef3391e2f5ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weiboad/kafka-php/zipball/d5b395aeb9d069dce49fc1dceff0a6f45750d981",
-                "reference": "d5b395aeb9d069dce49fc1dceff0a6f45750d981",
+                "url": "https://api.github.com/repos/weiboad/kafka-php/zipball/b12cfc683e2a9f8d20c008a942e2ef3391e2f5ed",
+                "reference": "b12cfc683e2a9f8d20c008a942e2ef3391e2f5ed",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -229,20 +250,25 @@
                 ]
             },
             "require": {
-                "amphp/amp": "v1.2.2",
-                "php": ">=5.5",
-                "psr/log": "1.0.2"
+                "amphp/amp": "^2.0.3",
+                "php": "^7.1",
+                "psr/log": "^1.0"
             },
             "require-dev": {
-                "kmelia/monolog-stdout-handler": "1.2.1",
-                "monolog/monolog": "1.22.1",
-                "phpunit/phpcov": "*",
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "dev-master"
+                "infection/infection": "^0.6",
+                "kmelia/monolog-stdout-handler": "^1.2",
+                "mikey179/vfsstream": "^1.6.5",
+                "monolog/monolog": "^1.23",
+                "phpstan/phpstan": "^0.9",
+                "phpstan/phpstan-phpunit": "^0.9",
+                "phpunit/phpcov": "^4.0",
+                "phpunit/phpunit": "^6.5",
+                "satooshi/php-coveralls": "2.0.0",
+                "squizlabs/php_codesniffer": "^3.1"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Kafka\\": "src/"
                 }
             },
@@ -256,20 +282,20 @@
                 "client",
                 "kafka"
             ],
-            "time": "2017-10-23T09:33:08+00:00"
+            "time": "2017-12-13T08:31:49+00:00"
         },
         {
             "name": "psr/log",
-            "version": "1.0.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -284,7 +310,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -309,7 +335,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2020-03-23T09:12:05+00:00"
         },
         {
             "name": "xialeistudio/io",
@@ -361,9 +387,13 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nmred/kafka-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-rdkafka": "*"
+    },
     "platform-dev": []
 }

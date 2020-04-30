@@ -1,7 +1,7 @@
 {
     "require": {
         "ext-rdkafka": "*",
-        "nmred/kafka-php": "v0.2.0.8",
+        "nmred/kafka-php": "*",
         "kozlice/monolog-kafka": "^1.0",
         "xialeistudio/io": "^1.0"
     }

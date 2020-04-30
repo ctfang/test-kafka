@@ -23,7 +23,7 @@ $producer->setLogger($logger);
 $result = $producer->send(array(
     array(
         'topic' => KAFKA_TOPIC_TEST,
-        'value' => 'test....message.',
+        'value' => "tset",
         'key' => '',
     ),
 ));
